@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tshianeo Eadith Mulaudzi | Data Analytics Portfolio</title>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #1d4ed8;
+      --accent-soft: #dbeafe;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+      --max-width: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 20px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 28px;
+    }
+
+    .sidebar {
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      border: 1px solid var(--line);
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 0.98rem;
+    }
+
+    .bio {
+      margin-bottom: 22px;
+      font-size: 0.96rem;
+    }
+
+    .chip-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 22px;
+    }
+
+    .chip {
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .link-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .link-btn {
+      display: block;
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--text);
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .link-btn:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .main {
+      display: grid;
+      gap: 24px;
+    }
+
+    .hero,
+    .section,
+    .project-card {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
+
+    .hero {
+      padding: 30px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .section {
+      padding: 26px;
+    }
+
+    .section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .section p {
+      color: var(--muted);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      overflow: hidden;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      background: #eef2ff;
+      display: block;
+    }
+
+    .project-body {
+      padding: 20px;
+    }
+
+    .project-body h4 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .project-body p {
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    .insights {
+      padding-left: 18px;
+      margin-bottom: 16px;
+    }
+
+    .insights li {
+      margin-bottom: 8px;
+      font-size: 0.94rem;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .small-btn {
+      display: inline-block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .small-btn.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 8px 0 18px;
+    }
+
+    @media (max-width: 980px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="profile-img">TM</div>
+      <h1>Tshianeo Eadith Mulaudzi</h1>
+      <p class="tagline">Data Analytics Portfolio | Research Ethics, Public Health, and Business Insights</p>
+
+      <p class="bio">
+        I am a data analytics learner and public health professional with a background in Medical Bioscience,
+        research ethics administration, and data-driven problem solving. I use Excel, SQL, Python, Power BI,
+        and Jupyter Notebook to turn raw data into clear insights and practical recommendations.
+      </p>
+
+      <div class="chip-wrap">
+        <span class="chip">Excel</span>
+        <span class="chip">SQL</span>
+        <span class="chip">Python</span>
+        <span class="chip">Power BI</span>
+        <span class="chip">Jupyter</span>
+        <span class="chip">Data Cleaning</span>
+        <span class="chip">Dashboarding</span>
+        <span class="chip">EDA</span>
+      </div>
+
+      <div class="link-list">
+        <a class="link-btn" href="https://github.com/Mulaudzieadith" target="_blank">GitHub</a>
+        <a class="link-btn" href="https://www.linkedin.com/in/tshianeo-eadith-mulaudzi" target="_blank">LinkedIn</a>
+        <a class="link-btn" href="mailto:your-email@example.com">Email Me</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="hero">
+        <h2>My Portfolio</h2>
+        <p>
+          This portfolio showcases projects in business analytics, healthcare analytics, and exploratory data analysis.
+          Each project focuses on extracting useful insights from data and presenting them in a way that supports better decisions.
+        </p>
+      </section>
+
+      <section class="section">
+        <h3>About Me</h3>
+        <p>
+          My work sits at the intersection of ethics, health, and analytics. I am especially interested in using data to improve
+          decision-making, communicate findings clearly, and solve real-world problems across healthcare, operations, and business.
+        </p>
+      </section>
+
+      <section class="project-grid">
+        <article class="project-card">
+          <img class="project-image" src="images/sales-dashboard.png" alt="Sales Analysis Dashboard screenshot">
+          <div class="project-body">
+            <h4>Sales Analysis Dashboard</h4>
+            <p>
+              A business dashboard project focused on tracking sales performance, product trends, and customer insights.
+            </p>
+            <ul class="insights">
+              <li>Identified top-performing products and sales categories.</li>
+              <li>Highlighted revenue patterns to support better business decisions.</li>
+              <li>Built a clear dashboard for fast performance monitoring.</li>
+            </ul>
+            <div class="project-links">
+              <a class="small-btn primary" href="https://github.com/Mulaudzieadith/data-analytics-portfolio" target="_blank">View Project</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img class="project-image" src="images/healthcare-dashboard.png" alt="Healthcare Dashboard screenshot">
+          <div class="project-body">
+            <h4>Healthcare Dashboard</h4>
+            <p>
+              A healthcare analytics dashboard designed to present patient and operational trends in a clean, visual format.
+            </p>
+            <ul class="insights">
+              <li>Displayed trends that can help monitor healthcare service performance.</li>
+              <li>Used visuals to simplify complex healthcare data.</li>
+              <li>Focused on clarity, usability, and insight communication.</li>
+            </ul>
+            <div class="project-links">
+              <a class="small-btn primary" href="https://github.com/Mulaudzieadith/data-analytics-portfolio" target="_blank">View Project</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img class="project-image" src="images/unicorn-eda.png" alt="Unicorn Companies EDA screenshot">
+          <div class="project-body">
+            <h4>Unicorn Companies EDA</h4>
+            <p>
+              An exploratory data analysis project examining unicorn companies, industries, valuations, and time to unicorn status.
+            </p>
+            <ul class="insights">
+              <li>Explored which industries produce high-value unicorn companies.</li>
+              <li>Analyzed how long companies take to reach unicorn status.</li>
+              <li>Used Python and pandas for data cleaning, transformation, and analysis.</li>
+            </ul>
+            <div class="project-links">
+              <a class="small-btn primary" href="https://github.com/Mulaudzieadith/tshianeo-data-analytics-portfolio" target="_blank">View Project</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img class="project-image" src="images/waze-churn.png" alt="Waze Churn Analysis screenshot">
+          <div class="project-body">
+            <h4>Waze Churn Analysis</h4>
+            <p>
+              A user behavior analysis project focused on understanding churn patterns and usage differences across groups.
+            </p>
+            <ul class="insights">
+              <li>Compared retained and churned users to uncover behavioral patterns.</li>
+              <li>Explored usage trends across device types and engagement measures.</li>
+              <li>Translated analysis into actionable recommendations.</li>
+            </ul>
+            <div class="project-links">
+              <a class="small-btn primary" href="https://github.com/Mulaudzieadith/tshianeo-data-analytics-portfolio" target="_blank">View Project</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <div class="footer">
+        Built for GitHub Pages • Update the image files and project links to match your final repositories
+      </div>
+    </main>
+  </div>
+</body>
+</html>
